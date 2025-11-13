@@ -1,73 +1,175 @@
 <!-- FILE: cadastro.html -->
-<form id="cadastroForm" novalidate>
-<fieldset>
-<legend>Dados pessoais</legend>
+<!DOCTYPE html>
+<html lang="pt-BR">
 
+<head>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Projetos sociais e voluntariado" />
+    <title>Cadastro - Cadastro</title>
+</head>
+<body>
+    <!-- CABEÇALHO -->
+    <header class="site-header">
+        <div class="container">
+            <center><h1>Cadastro</h1></center>
+            <nav aria-label="Menu principal">
+                <ul class="nav">
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="projetos.html">Projetos</a></li>
+                    <li><a href="cadastro.html">Cadastro</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
-<label for="nome">Nome completo</label>
-<input id="nome" name="nome" type="text" required minlength="2" placeholder="Nome completo">
+    <!-- CONTEÚDO PRINCIPAL -->
+    <main>
+        <section class="cadastro-section container">
+            <h2>Cadastro de Voluntários</h2>
+            <p>Faça parte da nossa equipe! Preencha o formulário abaixo.</p>
 
+            <!-- FORMULÁRIO -->
+            <form class="form-cadastro" id="formulario-cadastro">
+                
+                <!-- Nome -->
+                <div class="form-group">
+                    <label for="nome">Nome Completo: *</label>
+                    <input type="text" id="nome" required>
+                    <span id="erro-nome" style="display:none;"></span>
+                </div>
 
-<label for="email">E-mail</label>
-<input id="email" name="email" type="email" required placeholder="seu@exemplo.com">
+                <!-- Email -->
+                <div class="form-group">
+                    <label for="email">E-mail: *</label>
+                    <input type="email" id="email" required>
+                    <span id="erro-email" style="display:none;"></span>
+                </div>
 
+                <!-- Telefone -->
+                <div class="form-group">
+                    <label for="telefone">Telefone: *</label>
+                    <input type="tel" id="telefone" placeholder="(11) 99999-9999" required>
+                    <span id="erro-telefone" style="display:none;"></span>
+                </div>
 
-<label for="cpf">CPF</label>
-<input id="cpf" name="cpf" type="text" inputmode="numeric" pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" required placeholder="000.000.000-00">
+                <!-- Data de Nascimento -->
+                <div class="form-group">
+                    <label for="data-nascimento">Data de Nascimento: *</label>
+                    <input type="date" id="data-nascimento" required>
+                    <span id="erro-data-nascimento" style="display:none;"></span>
+                </div>
 
+                <!-- Cidade -->
+                <div class="form-group">
+                    <label for="cidade">Cidade: *</label>
+                    <input type="text" id="cidade" required>
+                    <span id="erro-cidade" style="display:none;"></span>
+                </div>
 
-<label for="telefone">Telefone</label>
-<input id="telefone" name="telefone" type="tel" inputmode="tel" required placeholder="(00) 00000-0000">
+                <!-- Estado -->
+                <div class="form-group">
+                    <label for="estado">Estado: *</label>
+                    <select id="estado" required>
+                        <option value="">Selecione...</option>
+                        <option value="SP">São Paulo</option>
+                        <option value="RJ">Rio de Janeiro</option>
+                        <option value="MG">Minas Gerais</option>
+                        <option value="BA">Bahia</option>
+                        <option value="PR">Paraná</option>
+                        <option value="RS">Rio Grande do Sul</option>
+                        <option value="PE">Pernambuco</option>
+                        <option value="CE">Ceará</option>
+                        <option value="SC">Santa Catarina</option>
+                        <option value="GO">Goiás</option>
+                    </select>
+                    <span id="erro-estado" style="display:none;"></span>
+                </div>
 
+                <!-- Área de Interesse -->
+                <div class="form-group">
+                    <label for="area-interesse">Área de Interesse: *</label>
+                    <select id="area-interesse" required>
+                        <option value="">Selecione...</option>
+                        <option value="Educação">Educação</option>
+                        <option value="Saúde">Saúde</option>
+                        <option value="Meio Ambiente">Meio Ambiente</option>
+                        <option value="Assistência Social">Assistência Social</option>
+                        <option value="Arrecadação">Arrecadação de Fundos</option>
+                        <option value="Eventos">Organização de Eventos</option>
+                    </select>
+                    <span id="erro-area-interesse" style="display:none;"></span>
+                </div>
 
-<label for="nascimento">Data de Nascimento</label>
-<input id="nascimento" name="nascimento" type="date" required>
-</fieldset>
+                <!-- Disponibilidade -->
+                <div class="form-group">
+                    <label>Disponibilidade: *</label>
+                    <div class="checkbox-group">
+                        <label>
+                            <input type="checkbox" name="disponibilidade" value="Manhã">
+                            Manhã
+                        </label>
+                        <label>
+                            <input type="checkbox" name="disponibilidade" value="Tarde">
+                            Tarde
+                        </label>
+                        <label>
+                            <input type="checkbox" name="disponibilidade" value="Noite">
+                            Noite
+                        </label>
+                        <label>
+                            <input type="checkbox" name="disponibilidade" value="Fim de Semana">
+                            Fim de Semana
+                        </label>
+                    </div>
+                    <span id="erro-disponibilidade" style="display:none;"></span>
+                </div>
 
+                <!-- Mensagem -->
+                <div class="form-group">
+                    <label for="mensagem">Por que deseja ser voluntário?</label>
+                    <textarea id="mensagem" rows="5" placeholder="Conte-nos sua motivação..."></textarea>
+                </div>
 
-<fieldset>
-<legend>Endereço</legend>
+                <!-- Termos -->
+                <div class="form-group">
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="termos" required>
+                        Li e aceito os termos de privacidade *
+                    </label>
+                    <span id="erro-termos" style="display:none;"></span>
+                </div>
 
+                <!-- Botões -->
+                <div class="form-buttons">
+                    <button type="submit" class="btn-enviar">Enviar Cadastro</button>
+                    <button type="reset" class="btn-limpar">Limpar Formulário</button>
+                </div>
 
-<label for="cep">CEP</label>
-<input id="cep" name="cep" type="text" inputmode="numeric" pattern="\d{5}-\d{3}" required placeholder="00000-000">
+            </form>
+        </section>
+    </main>
 
+    <!-- RODAPÉ -->
+    <footer class="site-footer">
+        <div class="container">
+            <p>&copy; <span id="ano">2024</span> ONG Renascer – Relatórios de Transparência</p>
+        </div>
+    </footer>
 
-<label for="endereco">Endereço</label>
-<input id="endereco" name="endereco" type="text" required>
-
-
-<label for="cidade">Cidade</label>
-<input id="cidade" name="cidade" type="text" required>
-
-
-<label for="estado">Estado</label>
-<select id="estado" name="estado" required>
-<option value="">Selecione</option>
-<option value="SP">SP</option>
-<option value="RJ">RJ</option>
-<option value="MG">MG</option>
-<!-- adicionar demais estados -->
-</select>
-</fieldset>
-
-
-<button type="submit">Enviar cadastro</button>
-</form>
-
-
-<div id="formMessage" role="status" aria-live="polite"></div>
-</section>
-</main>
-
-
-<footer class="site-footer">
-<div class="container">
-<p>&copy; <span id="year3"></span> Nome da ONG</p>
-</div>
+    <!-- JavaScript -->
+    <script src="js/app.js"></script>
+    <footer class="site-footer">
+  <div class="container">
+    <p>&copy; <span id="year"></span> ONG Renascer — Relatórios de Transparência</p>
+  </div>
 </footer>
 
+<center>
+  <button id="modo-escuro">🌙 Alternar modo</button>
+</center>
 
-<script src="js/scripts.js"></script>
+<script src="script.js"></script>
 </body>
 </html>
