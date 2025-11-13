@@ -1,66 +1,84 @@
 <!-- FILE: index.html -->
 <!doctype html>
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<meta name="description" content="Plataforma da ONG - missão, visão e contato" />
-<title>ONG - Página Inicial</title>
-<link rel="stylesheet" href="css/styles.css">
+
+<head>
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Plataforma da ONG - missão, visão e contato" />
+    <link rel="stylesheet" href="css/estilo.css">
+    <title>ONG - Página Inicial</title>
+
 </head>
+
 <body>
-<header class="site-header">
-<div class="container">
-<h1>Nome da ONG</h1>
-<nav aria-label="Menu principal">
-<ul class="nav">
-<li><a href="index.html">Início</a></li>
-<li><a href="projetos.html">Projetos</a></li>
-<li><a href="cadastro.html">Cadastro</a></li>
-</ul>
-</nav>
-</div>
-</header>
+    <header class="site-header">
+        <div class="container">
+            <center>
+                <h1>ONG Renascer</h1>
+            </center>
+            <link href
+            <nav aria-label="Menu principal">
+                <ul class="nav">
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="projetos.html">Projetos</a></li>
+                    <li><a href="cadastro.html">Cadastro</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
 
-<main>
-<section class="hero container" aria-labelledby="hero-title">
-<h2 id="hero-title">Missão, Visão e Valores</h2>
-<p>Transformar realidades por meio de ações sociais, educação e cidadania.</p>
-<img src="assets/hero.jpg" alt="Foto de ação social" class="responsive-img">
-</section>
+    <main>
+        <section class="hero container" aria-labelledby="hero-title">
+            <h2 id="hero-title">Missão, Visão e Valores</h2>
+            <img src="primeira foto.png" alt="Foto" width="400">
+            <p>Transformar realidades por meio de ações sociais, educação e cidadania.</p>
+        </section>
 
 
-<section class="about container" aria-labelledby="about-title">
-<h3 id="about-title">Sobre a organização</h3>
-<p>Histórico, conquistas e equipe. Informação transparente sobre nossa atuação.</p>
-</section>
+        <section class="about container" aria-labelledby="about-title">
+            <h3 id="about-title">Sobre a organização</h3>
+            <p>Histórico, conquistas e equipe. Informação transparente sobre nossa atuação.</p>
+        </section>
 
 
-<section class="contact container" aria-labelledby="contact-title">
-<h3 id="contact-title">Contato</h3>
-<address>
-Rua Exemplo, 123 - Cidade - Estado<br>
-<a href="tel:+551199999999">(11) 99999-9999</a><br>
-<a href="mailto:contato@ong.org">contato@ong.org</a>
-</address>
-</section>
+        <section class="contact container" aria-labelledby="contact-title">
+            <h3 id="contact-title">Contato</h3>
+            <address>
+                Rua Exemplo, 123 - Cidade - Estado<br>
+                <a href="tel:+551199999999">(11) 99999-9999</a><br>
+                <a href="mailto:contato@ong.org">contato@ong.org</a>
+            </address>
+        </section>
 
 
-<section class="gallery container" aria-labelledby="gallery-title">
-<h3 id="gallery-title">Galeria de Atividades</h3>
-<figure>
-<img src="assets/activity1.jpg" alt="Voluntários em ação" class="responsive-img">
-<figcaption>Voluntários distribuindo cestas básicas</figcaption>
-</figure>
-</section>
-</main>
+        <section class="gallery container" aria-labelledby="gallery-title">
+            <h3 id="gallery-title">Galeria de Atividades</h3>
+            <figure>
+                <img src="Distribuindo cesta basica.jpeg" alt="Voluntários em ação" class="responsive-img"width="400">
+                <figcaption>Voluntários distribuindo cestas básicas</figcaption>
+            </figure>
+        </section>
+    </main>
 
 
+    <footer class="site-footer">
+        <div class="container">
+            <p>&copy; <span id="year"></span> ONG Renascer — Relatórios de Transparência</p>
+        </div>
+    </footer>
+<button id="modo-escuro">🌙 Alternar modo</button>
+<script src="script.js"></script>
 <footer class="site-footer">
-<div class="container">
-<p>&copy; <span id="year"></span> Nome da ONG — Relatórios de Transparência</p>
-</div>
+  <div class="container">
+    <p>&copy; <span id="year"></span> ONG Renascer — Relatórios de Transparência</p>
+  </div>
 </footer>
 
+<center>
+  <button id="modo-escuro">🌙 Alternar modo</button>
+</center>
 
-<script src="js/scripts.js"></script>
+<script src="script.js"></script>
 </body>
 </html>
