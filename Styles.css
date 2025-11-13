@@ -1,27 +1,462 @@
-<!-- FILE: css/styles.css -->
-:root{
---max-width:1000px;
---gap:1rem;
+/* ============================================
+   VARIÁVEIS CSS - Cores e tamanhos reutilizáveis
+   ============================================ */
+
+:root {
+    /* Cores Principais */
+    --cor-primaria: #2c5f8d;
+    --cor-primaria-escura: #1e4466;
+    --cor-secundaria: #f39c12;
+
+    /* Cores Neutras (cinzas) */
+    --cor-clara: #f4f4f4;
+    --cor-branca: #ffffff;
+    --cor-texto: #333333;
+    --cor-cinza: #666666;
+
+    /* Tamanhos de Fonte */
+    --fonte-pequena: 14px;
+    --fonte-normal: 16px;
+    --fonte-media: 20px;
+    --fonte-grande: 28px;
+    --fonte-gigante: 36px;
+
+    /* Espaçamentos */
+    --espaco-pequeno: 8px;
+    --espaco-medio: 16px;
+    --espaco-grande: 24px;
+    --espaco-extra: 32px;
 }
-*{box-sizing:border-box}
-body{font-family:system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; line-height:1.4; margin:0; color:#222}
-.container{max-width:var(--max-width);margin:0 auto;padding:1rem}
-.site-header{background:#f5f5f5;padding:1rem 0;border-bottom:1px solid #e0e0e0}
-.nav{list-style:none;padding:0;display:flex;gap:1rem}
-.nav a{color:inherit;text-decoration:none}
-.hero{display:grid;gap:var(--gap);align-items:center}
-.responsive-img{width:100%;height:auto;display:block}
-.projects-list .project{border:1px solid #e6e6e6;padding:1rem;margin-bottom:1rem}
-.form-section fieldset{border:1px solid #ddd;padding:1rem;margin-bottom:1rem}
-label{display:block;margin-top:.5rem}
-input,select,button{width:100%;padding:.5rem;margin-top:.25rem}
-button{background:#0077cc;color:#fff;border:0;border-radius:6px;padding:.75rem}
-.site-footer{background:#fafafa;padding:1rem;border-top:1px solid #eee;margin-top:2rem}
-@media(min-width:700px){
-.nav{gap:2rem}
-.hero{grid-template-columns:1fr 1fr}
+
+/* ============================================
+   RESET BÁSICO - Remove espaços padrão
+   ============================================ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ============================================
+   ESTILOS GERAIS DO BODY
+   ============================================ */
+
+body {
+    font-family: Arial, sans-serif;
+    font-size: var(--fonte-normal);
+    line-height: 1.6;
+    color: var(--cor-texto);
+    background-color: var(--cor-clara);
+}
+
+/* ============================================
+   CONTAINER - Limita largura do conteúdo
+   ============================================ */
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--espaco-medio);
+}
+
+/* ============================================
+   CABEÇALHO (HEADER)
+   ============================================ */
+
+.site-header {
+    background-color: var(--cor-primaria);
+    color: var(--cor-branca);
+    padding: var(--espaco-medio) 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.site-header h1 {
+    text-align: center;
+    margin-bottom: var(--espaco-medio);
+    font-size: var(--fonte-grande);
+}
+
+/* ============================================
+   NAVEGAÇÃO (MENU)
+   ============================================ */
+
+.nav {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: var(--espaco-grande);
+}
+
+.nav li a {
+    color: var(--cor-branca);
+    text-decoration: none;
+    padding: var(--espaco-pequeno) var(--espaco-medio);
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+/* Efeito ao passar o mouse no menu */
+.nav li a:hover {
+    background-color: var(--cor-primaria-escura);
+}
+
+/* ============================================
+   MAIN - Conteúdo Principal
+   ============================================ */
+
+main {
+    padding: var(--espaco-extra) 0;
+}
+
+/* ============================================
+   SEÇÕES
+   ============================================ */
+
+section {
+    background-color: var(--cor-branca);
+    margin-bottom: var(--espaco-grande);
+    padding: var(--espaco-grande);
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* ============================================
+   HERO - Seção de Destaque
+   ============================================ */
+
+.hero {
+    text-align: center;
+    background-color: #e8f4f8;
+    border-left: 5px solid var(--cor-primaria);
+}
+
+.hero h2 {
+    color: var(--cor-primaria);
+    font-size: var(--fonte-gigante);
+    margin-bottom: var(--espaco-medio);
+}
+
+.hero p {
+    font-size: var(--fonte-media);
+    color: var(--cor-cinza);
+    margin-bottom: var(--espaco-medio);
+}
+
+/* ============================================
+   TÍTULOS (H2, H3, etc)
+   ============================================ */
+
+h2,
+h3 {
+    color: var(--cor-primaria);
+    margin-bottom: var(--espaco-medio);
+}
+
+h2 {
+    font-size: var(--fonte-grande);
+}
+
+h3 {
+    font-size: var(--fonte-media);
+    border-bottom: 2px solid var(--cor-primaria);
+    padding-bottom: var(--espaco-pequeno);
+}
+
+/* ============================================
+   PARÁGRAFOS
+   ============================================ */
+
+p {
+    margin-bottom: var(--espaco-medio);
+}
+
+/* ============================================
+   IMAGENS RESPONSIVAS
+   ============================================ */
+
+.responsive-img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin: var(--espaco-medio) 0;
+}
+
+/* ============================================
+   SEÇÃO DE CONTATO
+   ============================================ */
+
+.contact address {
+    font-style: normal;
+    line-height: 2;
+}
+
+.contact a {
+    color: var(--cor-primaria);
+    text-decoration: none;
+}
+
+.contact a:hover {
+    text-decoration: underline;
+}
+
+/* ============================================
+   GALERIA
+   ============================================ */
+
+.gallery figure {
+    text-align: center;
+}
+
+.gallery figcaption {
+    margin-top: var(--espaco-pequeno);
+    font-style: italic;
+    color: var(--cor-cinza);
+}
+
+/* ============================================
+   RODAPÉ (FOOTER)
+   ============================================ */
+
+.site-footer {
+    background-color: var(--cor-primaria-escura);
+    color: var(--cor-branca);
+    text-align: center;
+    padding: var(--espaco-grande) 0;
+    margin-top: var(--espaco-extra);
+}
+
+.site-footer p {
+    margin: 0;
+}
+
+/* ============================================
+   FORMULÁRIO DE CADASTRO
+   ============================================ */
+
+.cadastro-section {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.cadastro-section h2 {
+    text-align: center;
+    margin-bottom: var(--espaco-pequeno);
+}
+
+.cadastro-section>p {
+    text-align: center;
+    color: var(--cor-cinza);
+    margin-bottom: var(--espaco-extra);
+}
+
+/* Formulário */
+.form-cadastro {
+    background-color: var(--cor-branca);
+    padding: var(--espaco-grande);
+    border-radius: 8px;
+}
+
+/* Grupos de campos */
+.form-group {
+    margin-bottom: var(--espaco-grande);
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: var(--espaco-pequeno);
+    font-weight: bold;
+    color: var(--cor-texto);
+}
+
+/* Inputs de texto, email, tel, date */
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="tel"],
+.form-group input[type="date"],
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: var(--espaco-pequeno) var(--espaco-medio);
+    font-size: var(--fonte-normal);
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    transition: border-color 0.3s;
+}
+
+/* Efeito ao focar no campo */
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--cor-primaria);
+}
+
+/* Textarea */
+.form-group textarea {
+    resize: vertical;
+    font-family: Arial, sans-serif;
+}
+
+/* Select (dropdown) */
+.form-group select {
+    cursor: pointer;
+}
+
+/* Checkboxes */
+.checkbox-group {
+    display: flex;
+    flex-direction: column;
+    gap: var(--espaco-pequeno);
+}
+
+.checkbox-group label {
+    display: flex;
+    align-items: center;
+    gap: var(--espaco-pequeno);
+    font-weight: normal;
+}
+
+.checkbox-group input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
 }
 
 
-/* foco acessível */
-:focus{outline:3px solid #8ab4ff;outline-offset:2px}
+.checkbox-label {
+    display: flex;
+    align-items: center;
+    gap: var(--espaco-pequeno);
+    font-weight: normal !important;
+}
+
+.checkbox-label input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+}
+
+/* Botões do formulário */
+.form-buttons {
+    display: flex;
+    gap: var(--espaco-medio);
+    justify-content: center;
+    margin-top: var(--espaco-extra);
+}
+
+.btn-enviar,
+.btn-limpar {
+    padding: var(--espaco-medio) var(--espaco-extra);
+    font-size: var(--fonte-normal);
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.btn-enviar {
+    background-color: var(--cor-primaria);
+    color: var(--cor-branca);
+}
+
+.btn-enviar:hover {
+    background-color: var(--cor-primaria-escura);
+    transform: translateY(-2px);
+}
+
+.btn-limpar {
+    background-color: var(--cor-cinza);
+    color: var(--cor-branca);
+}
+
+.btn-limpar:hover {
+    background-color: #555555;
+}
+
+/* ============================================
+   RESPONSIVO - Adaptação para celular
+   ============================================ */
+
+@media (max-width: 768px) {
+
+    /* Menu vira vertical em telas pequenas */
+    .nav {
+        flex-direction: column;
+        gap: var(--espaco-pequeno);
+    }
+
+    /* Títulos menores no celular */
+    .site-header h1 {
+        font-size: var(--fonte-media);
+    }
+
+    .hero h2 {
+        font-size: var(--fonte-grande);
+    }
+
+    /* Menos espaçamento interno nas seções */
+    section {
+        padding: var(--espaco-medio);
+    }
+}
+:root {
+  --cor-fundo: #ffffff;
+  --cor-texto: #000000;
+}
+
+/* modo escuro */
+:root {
+  --fundo: #ffffff;
+  --texto: #000000;
+  --fundo-header: #f3f3f3;
+  --fundo-footer: #f3f3f3;
+  --link: #0066cc;
+}
+
+/* 🌙 Quando o modo escuro estiver ativo */
+[data-tema="escuro"] {
+  --fundo: #0e0e0e;
+  --texto: #f5f5f5;
+  --fundo-header: #1b1b1b;
+  --fundo-footer: #1b1b1b;
+  --link: #33aaff;
+}
+
+/* Aplicação das cores */
+body {
+  background-color: var(--fundo);
+  color: var(--texto);
+  font-family: Arial, sans-serif;
+  transition: background 0.3s, color 0.3s;
+}
+
+header, footer {
+  background-color: var(--fundo-header);
+  padding: 10px 0;
+}
+
+footer {
+  background-color: var(--fundo-footer);
+  text-align: center;
+}
+
+a {
+  color: var(--link);
+}
+
+/* Botão */
+#modo-escuro {
+  margin: 20px auto;
+  padding: 10px 20px;
+  border: none;
+  background-color: var(--link);
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+#modo-escuro:hover {
+  opacity: 0.8;
+}
